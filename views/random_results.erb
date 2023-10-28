@@ -1,31 +1,40 @@
- <h1>
-  Random Number Results
+<h1>
+  Payment Results
 </h1>
 
 <dl>
+
   <dt>
-    Minimum
+    APR
   </dt>
   <dd>
-    <%= params.fetch("minimum") %>
+    <%=@payment.to_fs(:percentage)%>
   </dd>
 
   <dt>
-    Maximum
+    Number of Years
   </dt>
   <dd>
-    <%= params.fetch("maximum")%>   
+    <%= @number_of_years%>   
   </dd>
 
-   <dt>
-    Random Number
+  <dt>
+    Principal
   </dt>
   <dd>
-    <%= params.fetch("minimum").to_f + (params.fetch("maximum").to_f - params.fetch("minimum").to_f) * rand %>   
+    <%= @principal%>   
+  </dd>
+
+  <dt>
+    Payment
+  </dt>
+  <dd>
+    <%=@payment.to_fs(:currency)%>   
   </dd>
 
 </dl>
 
-<a href="/random/new">
-  Pick another random number
+<a href="/payment/new">
+  Calculate another payment
 </a>
+

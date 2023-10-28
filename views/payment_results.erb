@@ -1,4 +1,4 @@
-<h1>
+ <h1>
   Payment Results
 </h1>
 
@@ -8,6 +8,7 @@
     APR
   </dt>
   <dd>
+    <%= sprintf('%.4f%%', @apr * 100) %>
     <%=@payment.to_fs(:percentage)%>
   </dd>
 
@@ -37,4 +38,3 @@
 <a href="/payment/new">
   Calculate another payment
 </a>
-
